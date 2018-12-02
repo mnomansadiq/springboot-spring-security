@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+>
+<head>
+    <title>Login</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link th:href="@{/css/admin/admin.css}" rel="stylesheet"/>
+
+</head>
+
+<body>
+<div class="container">
+
+    <div class="alert alert-danger" th:if="${param.error}">
+        <strong>Invalid username or password or both.</strong>
+    </div>
+
+    <form class="form-signin" th:action="@{/login}" method="post">
+        <h2 class="form-signin-heading text-center">sign in</h2>
+        <input type="text" id="inputName" name="username" class="form-control" placeholder="Username"
+               required="required" autofocus="autofocus"/>
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password"
+               required="required"/>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+
+</div> <!-- /container -->
+</body>
+</html>
