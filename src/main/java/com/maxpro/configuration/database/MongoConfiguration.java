@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Configuration;
 import java.io.IOException;
 import java.util.Properties;
 
-
 @Configuration
 @EnableAutoConfiguration
 public class MongoConfiguration {
@@ -26,10 +25,35 @@ public class MongoConfiguration {
     @Value("${spring.data.mongodb.port}")
     private int port;
 
-    /*@Value("${spring.data.mongodb.username}")
-    private String userName;
-    */
+    @Value("${jms.server.url}")
+    private String jmsServerURL;
 
+    @Value("${jms.server.port}")
+    private String jmsServerPort;
+
+    @Value("${jms.queue.address}")
+    private String jmsMessageQueueName;
+
+    @Value("${jms.message.property.name}")
+    private String jmsMessagePropertyName;
+
+
+    public String getJMSServerURL() {
+        return jmsServerURL;
+    }
+
+    public String getJMSServerPort() {
+        return jmsServerPort;
+    }
+
+    public String getJMSMessageQueueName() {
+        return jmsMessageQueueName;
+    }
+
+    public String getJMSMessagePropertyName() {
+        return jmsMessagePropertyName;
+    }
+    
     @Bean
     public MongoClient mongoClient() throws IOException {
     //    MongoCredential credential = MongoCredential.createCredential(userName, database, getSecurePassword().toCharArray());

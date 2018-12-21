@@ -32,6 +32,15 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.jasypt:jasypt-spring3:1.9.1')
+	
+	compile group: 'org.hornetq', name: 'hornetq-core', version: '2.2.5.Final'
+	compile group: 'org.hornetq', name: 'hornetq-jms', version: '2.2.5.Final'
+	compile group: 'org.hornetq', name: 'hornetq-logging', version: '2.2.5.Final'
+	/* compile group: 'org.hornetq', name: 'hornetq-transports', version: '2.0.0.GA'
+	*/
+	compile group: 'org.jboss.netty', name: 'netty', version: '3.2.10.Final'
+	compile group: 'org.jboss.javaee', name: 'jboss-jms-api', version: '1.1.0.GA'
+
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
